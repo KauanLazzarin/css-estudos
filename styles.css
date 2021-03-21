@@ -1,0 +1,61 @@
+/* Estilizações padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #efef;
+}
+
+div {
+    margin: 5vh 0;
+}
+
+h1 {
+    font-size: 32px;
+    font-family: monospace;
+    color: blueviolet;
+    padding: 20px;
+    background-color: white;
+    border-bottom: 3px solid blueviolet ;
+}
+
+
+
+/* ============ */
+
+.loading {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    padding: 25px;
+}
+
+.loading i {
+    font-size: 148px;
+    color: blueviolet;
+    animation: loading 2s linear infinite;
+    border-radius: 50%;
+    padding: 25px;
+    background-color: black;
+    box-shadow: 1px 1px 20px 12px rgba(88, 129, 241, 0.603);
+}
+
+@keyframes loading {
+    50%{
+        color: red;
+        transform: rotate(-180deg);
+    }
+
+    100% {
+        color: green;
+        transform: rotate(-360deg);
+    }
+}
