@@ -1,0 +1,237 @@
+/* 
+    aqui vão alguns seletores css para uso específico
+*/
+
+/* 
+    O seletor * seleciona todos os elementos dentro da página
+    ou dentro de um elemento pai, útil para zerar margins e paddings 
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ 
+#seletores * {
+    width: 20vw;
+    height: 120px;
+    background-color: red;
+}
+
+
+/*
+    O seletor # seleciona um elemento por id
+*/
+
+#seletores {
+    background-color: blue;
+}
+
+
+/* 
+    O seletor . seleciona elementos por classe
+*/
+
+.element {
+    border: 3px solid black;
+}
+
+/* 
+    O seletor de pais / filhos encadeia os elementos para selecionar um
+    por exemplo um li dentro de um ul
+*/
+
+.list {
+    background-color: black;
+}
+
+.list ul li {
+    list-style: none;
+    color: white;
+}
+
+/* 
+    Já o seletor por nome do elemento seleciona diretamente ele
+*/
+
+ul {
+    width: 20vw;
+    margin: 0 auto;
+    background-color: gray;
+}
+
+/*  
+    O seletor :visited e :link seleciona ancoras que ja foram clicadas ou visitadas
+*/
+
+.links {
+    margin: 0 auto;
+}
+
+.links a {
+    font-size: 20px;
+}
+
+.links a:visited {
+    color: red;
+}
+
+.links a:link {
+    color: green;
+}
+
+
+/*
+    O seletor + selecionará -somente- o primeiro elemento após o outro
+*/
+
+.list ul + li {
+    background-color: red;
+}
+
+
+/* 
+    O seletor > selecionará apenas filhos diretos do elemento pai
+*/
+
+.texts > h3 {
+    font-size: 20px;
+    color: blueviolet;
+    font-weight: lighter;
+}
+
+/* 
+    O seletor ~ funciona de maneira semelhante ao + porém selecionando todos os elementos
+    desde que venham dentro do elemento pai
+*/
+
+.texts p ~ h3 {
+    background-color: red;
+}
+
+/*
+    O seletor [] é chamado de seletor por atributos, justamente
+    porque seleciona elementos cujo possuam certo tipo de atributo
+    no exemplo abaixo somente os h3 com parametro title receberão
+    os estilos
+*/
+
+.titles {
+    margin-top: 3vh;
+}
+
+.titles h3[title] {
+    font-size: 32px;
+    color: red;
+    font-weight: 500;
+}
+
+
+/* 
+    A pseudo-classe :checked seleciona inputs radio / checkbox que tenham sido marcados
+*/
+
+.checks {
+    margin-top: 10vh;
+}
+
+.checks input {
+    margin: 3vh 3vw;
+}
+
+.checks input[type="radio"]:checked,
+.checks input[type="checkbox"]:checked {
+    color: black;
+}
+
+/* 
+    Os seletores :after e :before criam pseudo elementos
+    antes ou depois dos elementos selecionados
+*/
+
+.checks input[type="checkbox"]:checked::after,
+.checks input[type="radio"]:checked::after {
+    width: 40px;
+    height: 40px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    content: 'v';
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    font-size: 20px;
+    color: white;
+    font-family: monospace;
+    font-weight: bold;
+    background-color: blueviolet;
+}
+
+/*
+    A pseudo classe :not seleciona elementos que não possuam o parametro passado,
+    por exemplo selecionar todos os elementos de uma div que não sejam #container
+*/
+
+#containers:not(.container) {
+    background-color: red;
+    font-size: 20px;
+}
+
+/* 
+    Alguns pseudo elementos uteis
+*/
+
+/* ::first-letter seleciona a primeira letra dentro do elemento selecionado */
+
+.texts h3::first-letter {
+    font-size: 32px;
+    color: black;
+}
+
+/* ::first line seleciona a primeira linha de um elemento */
+
+
+/* 
+    O seletor :nth-child() seleciona elementos conforme o numero passado, começando por 1  
+    também é possivel interpolar com multiplos de certo numero usando o n
+*/
+
+
+.texts h3:nth-child(2n) {
+    background-color: red;
+}
+
+
+/* 
+    O seletor :nth-last-child() selecionará elementos a partir do ultimo
+*/
+
+.list ul li:nth-last-child(1) {
+    background-color: red !important;
+}
+
+/* 
+    O seletor :nth-last-of-type() funciona como o :nth-child()
+    porém selecionará elementos do mesmo tipo a partir do numero passado
+*/
+
+.list ul li:nth-last-of-type(2) {
+    border: 3px solid brown;
+}
+
+
+/* 
+    O seletor :first-child selecionará o primeiro
+    elemento filho dentro do elemento pai
+*/
+
+.titles :first-child {
+    border: 1px solid black;
+}
+
+
+/*  O :last-child funciona da mesma forma porém selecionando o ultimo */
